@@ -1,0 +1,117 @@
+<% include ../partials/header %>
+		
+	<div class="card">
+		<div class="card-header">
+			<h2 class="text-center"><%= title %></h2>
+		</div>
+		<div class="card-body">
+			
+			<form method="POST" action="/reports/coursewise" class="form-group">
+				
+				<div class="row">
+					<label for="student" class="col-form-label col-md-2 text-md-right">Batch: </label>
+					<select class="form-control col-md-3" id="batch" name="batch">
+						<option value="2013-2017" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2013-2017") { %> selected <% } %> <% } %>>2013-2017</option>
+						<option value="2014-2018" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2014-2018") { %> selected <% } %> <% } %>>2014-2018</option>
+						<option value="2015-2019" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2015-2019") { %> selected <% } %> <% } %>>2015-2019</option>
+						<option value="2016-2020" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2016-2020") { %> selected <% } %> <% } %>>2016-2020</option>
+						<option value="2017-2021" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2017-2021") { %> selected <% } %> <% } %>>2017-2021</option>
+						<option value="2018-2022" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2018-2022") { %> selected <% } %> <% } %>>2018-2022</option>
+						<option value="2019-2023" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2019-2023") { %> selected <% } %> <% } %>>2019-2023</option>
+						<option value="2020-2024" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2020-2024") { %> selected <% } %> <% } %>>2020-2024</option>
+						<option value="2021-2025" <% if (typeof batch_selected !== 'undefined') { %> <% if(batch_selected == "2021-2025") { %> selected <% } %> <% } %>>2021-2025</option>
+					</select>
+
+					<label for="course" class="col-form-label col-md-2 text-md-right">Course: </label>
+					<select class="form-control col-md-3" id="course" name="course">
+						<% courses.forEach((course) => { %>
+							<option value="<%= course.id %>" <% if (typeof course_selected !== 'undefined') { %> <% if(course_selected == course.id) { %> selected <% } %> <% } %>><%= course.name %></option>
+						<% }) %>
+					</select>
+				</div>
+
+				<br>
+
+				<input type="submit" value="Submit" class="btn btn-success col-md-2 offset-md-5">
+
+			</form>
+
+		</div>
+	</div>
+
+	<% if(typeof course_selected !== 'undefined') { %>
+
+		<table class="table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th>Roll No.</th>
+					<th>Student Name</th>
+					<% if(P[0] != 0) { %><th>PO1 (<%= P[0].toFixed(2) %>)</th><% } %>
+					<% if(P[1] != 0) { %><th>PO2 (<%= P[1].toFixed(2) %>)</th><% } %>
+					<% if(P[2] != 0) { %><th>PO3 (<%= P[2].toFixed(2) %>)</th><% } %>
+					<% if(P[3] != 0) { %><th>PO4 (<%= P[3].toFixed(2) %>)</th><% } %>
+					<% if(P[4] != 0) { %><th>PO5 (<%= P[4].toFixed(2) %>)</th><% } %>
+					<% if(P[5] != 0) { %><th>PO6 (<%= P[5].toFixed(2) %>)</th><% } %>
+					<% if(P[6] != 0) { %><th>PO7 (<%= P[6].toFixed(2) %>)</th><% } %>
+					<% if(P[7] != 0) { %><th>PO8 (<%= P[7].toFixed(2) %>)</th><% } %>
+					<% if(P[8] != 0) { %><th>PO9 (<%= P[8].toFixed(2) %>)</th><% } %>
+					<% if(P[9] != 0) { %><th>PO10 (<%= P[9].toFixed(2) %>)</th><% } %>
+					<% if(P[10] != 0) { %><th>PO11 (<%= P[10].toFixed(2) %>)</th><% } %>
+					<th>Average</th>
+				</tr>
+			</thead>
+			<tbody class="tbody-light">
+				
+				<% for(var i = 0; i < students.length; i++) { %>
+
+					<tr>
+						<td><%= students[i].roll %></td>
+						<td><%= students[i].name %></td>
+						<% if(P[0] != 0) { %><td><%= P1[i].toFixed(2) %></td><% } %>
+						<% if(P[1] != 0) { %><td><%= P2[i].toFixed(2) %></td><% } %>
+						<% if(P[2] != 0) { %><td><%= P3[i].toFixed(2) %></td><% } %>
+						<% if(P[3] != 0) { %><td><%= P4[i].toFixed(2) %></td><% } %>
+						<% if(P[4] != 0) { %><td><%= P5[i].toFixed(2) %></td><% } %>
+						<% if(P[5] != 0) { %><td><%= P6[i].toFixed(2) %></td><% } %>
+						<% if(P[6] != 0) { %><td><%= P7[i].toFixed(2) %></td><% } %>
+						<% if(P[7] != 0) { %><td><%= P8[i].toFixed(2) %></td><% } %>
+						<% if(P[8] != 0) { %><td><%= P9[i].toFixed(2) %></td><% } %>
+						<% if(P[9] != 0) { %><td><%= P10[i].toFixed(2) %></td><% } %>
+						<% if(P[10] != 0) { %><td><%= P11[i].toFixed(2) %></td><% } %>
+						<td><%= avg[i] %></td>
+					</tr>
+
+				<% } %>
+
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td>Average</td>
+					<% if(P[0] != 0) { %><td><%= P1a.toFixed(2) %></td><% } %>
+					<% if(P[1] != 0) { %><td><%= P2a.toFixed(2) %></td><% } %>
+					<% if(P[2] != 0) { %><td><%= P3a.toFixed(2) %></td><% } %>
+					<% if(P[3] != 0) { %><td><%= P4a.toFixed(2) %></td><% } %>
+					<% if(P[4] != 0) { %><td><%= P5a.toFixed(2) %></td><% } %>
+					<% if(P[5] != 0) { %><td><%= P6a.toFixed(2) %></td><% } %>
+					<% if(P[6] != 0) { %><td><%= P7a.toFixed(2) %></td><% } %>
+					<% if(P[7] != 0) { %><td><%= P8a.toFixed(2) %></td><% } %>
+					<% if(P[8] != 0) { %><td><%= P9a.toFixed(2) %></td><% } %>
+					<% if(P[9] != 0) { %><td><%= P10a.toFixed(2) %></td><% } %>
+					<% if(P[10] != 0) { %><td><%= P11a.toFixed(2) %></td><% } %>
+				</tr>
+			</tfoot>
+		</table>
+		
+		<div class="text-center">
+			<form action="/reports/courseCSV" method="POST">
+				<input type="hidden" name="batch" value="<%= batch_selected %>">
+				<input type="hidden" name="course" value="<%= course_selected %>">
+
+				<input type="submit" value="Download CSV" class="btn btn-success btn-md">
+			</form>
+		</div>
+
+	<% } %>
+
+<% include ../partials/footer %>
