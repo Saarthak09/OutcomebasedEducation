@@ -20,17 +20,17 @@ const Student = (sequelize) => {
     name: {
       type: DataTypes.STRING,
     },
-    username: {
+    roll: {
       type: DataTypes.STRING,
     },
-    email: {
-      type: DataTypes.STRING,
-    },
-
-    password: {
+    batch_of: {
       type: DataTypes.STRING,
     },
   });
+  students.associate = function(models) {
+    // associations can be defined here
+    students.belongsTo(models.Department, { foreignKey: 'departmentId' });
+  };
   return students;
 };
 

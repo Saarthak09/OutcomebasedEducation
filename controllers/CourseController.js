@@ -1,6 +1,7 @@
 // import model
-var Course = require('../models').Course;
+const etsuDB = require("./../db");
 
+var Course = etsuDB.courses;
 // Render all courses in index
 module.exports.Index = function(req, res) {
 

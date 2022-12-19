@@ -1,7 +1,9 @@
 // import models
-var Course = require('../models').Course;
-var Group = require('../models').Group;
-var Tool = require('../models').Tool;
+const etsuDB = require("./../db");
+
+var Course=etsuDB.courses;
+var Group=etsuDB.groups;
+var Tool=etsuDB.tools
 
 // Render all tool models with their relating models in index
 module.exports.Index = function(req, res) {

@@ -1,5 +1,7 @@
 // import model
-var Department = require('../models').Department;
+const etsuDB = require("./../db");
+
+var Department = etsuDB.departments;
 
 // Render all Department in index
 module.exports.Index = function(req, res) {

@@ -1,12 +1,13 @@
 // Importing all models
+const etsuDB = require("./../db");
 
-var Chart = require('../models').Chart;
-var Course = require('../models').Course;
-var Group = require('../models').Group;
-var Tool = require('../models').Tool;
-var ProgramOutcome = require('../models').ProgramOutcome;
-var Student = require('../models').Student;
-var Assessment = require('../models').Assessment;
+var Course=etsuDB.courses;
+var Group=etsuDB.groups;
+var Tool=etsuDB.tools
+var Chart = etsuDB.charts;
+var ProgramOutcome = etsuDB.programoutcomes;
+var Student = etsuDB.students;
+var Assessment = etsuDB.assessments;
 
 
 // Render all assessments(including relation models) in index

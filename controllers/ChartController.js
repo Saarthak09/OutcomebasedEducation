@@ -1,9 +1,11 @@
 // Importing models
-var Chart = require('../models').Chart;
-var Course = require('../models').Course;
-var Group = require('../models').Group;
-var Tool = require('../models').Tool;
-var ProgramOutcome = require('../models').ProgramOutcome;
+const etsuDB = require("./../db");
+
+var Course=etsuDB.courses;
+var Group=etsuDB.groups;
+var Tool=etsuDB.tools
+var Chart = etsuDB.charts
+var ProgramOutcome = etsuDB.programoutcomes;
 
 
 // Rendering chart model in index with all related models

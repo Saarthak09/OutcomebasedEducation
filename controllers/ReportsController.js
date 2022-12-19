@@ -1,12 +1,14 @@
 // Import models
-var Chart = require('../models').Chart;
-var Course = require('../models').Course;
-var Group = require('../models').Group;
-var Tool = require('../models').Tool;
-var ProgramOutcome = require('../models').ProgramOutcome;
-var Student = require('../models').Student;
-var Assessment = require('../models').Assessment;
-var Department = require('../models').Department;
+const etsuDB = require("./../db");
+
+var Course=etsuDB.courses;
+var Group=etsuDB.groups;
+var Tool=etsuDB.tools
+var Chart = etsuDB.charts;
+var ProgramOutcome = etsuDB.programoutcomes;
+var Student = etsuDB.students;
+var Assessment = etsuDB.assessments;
+var Department = etsuDB.departments;
 //FileSystem and json2csv for CSV export
 const fs = require('fs');
 const Json2csvParser = require('json2csv').Parser;

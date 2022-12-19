@@ -2,8 +2,10 @@ var fs = require('fs');
 var csv = require('fast-csv');
 
 // import models
-var Student = require('../models').Student;
-var Department = require('../models').Department;
+const etsuDB = require("./../db");
+
+var Student = etsuDB.students
+var Department = etsuDB.departments
 
 // Render all student models in index
 module.exports.Index = function(req, res) {

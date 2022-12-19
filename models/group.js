@@ -20,17 +20,11 @@ const Group = (sequelize) => {
     name: {
       type: DataTypes.STRING,
     },
-    username: {
-      type: DataTypes.STRING,
-    },
-    email: {
-      type: DataTypes.STRING,
-    },
-
-    password: {
-      type: DataTypes.STRING,
-    },
   });
+  groups.associate=function(models){
+    groups.belongsTo(models.Course, { foreignKey: 'courseId' });
+    groups.hasMany(models.Tool);
+  }
   return groups;
 };
 

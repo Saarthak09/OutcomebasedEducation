@@ -19,17 +19,11 @@ const ProgramOutcome = (sequelize) => {
     name: {
       type: DataTypes.STRING,
     },
-    username: {
-      type: DataTypes.STRING,
-    },
-    email: {
-      type: DataTypes.STRING,
-    },
-
-    password: {
-      type: DataTypes.STRING,
-    },
   });
+  programoutcomes.associate = function(models) {
+    // associations can be defined here
+    programoutcomes.hasMany(models.Chart);
+  };
   return programoutcomes;
 };
 

@@ -1,5 +1,7 @@
 // import models
-var ProgramOutcome = require('../models').ProgramOutcome;
+const etsuDB = require("./../db");
+
+var ProgramOutcome = etsuDB.programoutcomes;
 
 // Render all POs in index
 module.exports.Index = function(req, res) {

@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const User = require("./models/user");
-
+const Course=require("./models/course")
 // const host = process.env.MYSQL_DB_HOST;
 // const dbName = process.env.MYSQL_DB_NAME;
 // const user = process.env.MYSQL_DB_USER;
@@ -40,6 +40,7 @@ const etsuDB = {};
 etsuDB.sequelize = sequelize;
 etsuDB.Sequelize = Sequelize;
 etsuDB.users = User(sequelize);
+etsuDB.courses=Course(sequelize);
 
 etsuDB.sequelize
   .sync()

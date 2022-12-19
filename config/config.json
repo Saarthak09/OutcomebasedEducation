@@ -3,7 +3,7 @@
     "username": "root",
     "password": "obepass",
     "database": "outcomebased",
-    "host": "localhost:3306",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {

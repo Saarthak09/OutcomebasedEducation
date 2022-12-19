@@ -20,17 +20,12 @@ const Tool = (sequelize) => {
     name: {
       type: DataTypes.STRING,
     },
-    username: {
-      type: DataTypes.STRING,
-    },
-    email: {
-      type: DataTypes.STRING,
-    },
-
-    password: {
-      type: DataTypes.STRING,
-    },
   });
+  tools.associate = function(models) {
+    // associations can be defined here
+    tools.belongsTo(models.Group, { foreignKey: 'groupId' } );
+    tools.hasMany(models.Chart);
+  };
   return tools;
 };
 

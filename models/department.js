@@ -19,18 +19,10 @@ const Department = (sequelize) => {
   const departments = sequelize.define("departments", {
     name: {
       type: DataTypes.STRING,
-    },
-    username: {
-      type: DataTypes.STRING,
-    },
-    email: {
-      type: DataTypes.STRING,
-    },
-
-    password: {
-      type: DataTypes.STRING,
-    },
-  });
+    }});
+  departments.associate=function(models){
+    departments.hasMany(models.Student)
+  }  
   return departments;
 };
 

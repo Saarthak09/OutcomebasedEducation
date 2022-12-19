@@ -1,6 +1,9 @@
 // import models
-var Course = require('../models').Course;
-var Group = require('../models').Group;
+const etsuDB = require("./../db");
+
+var Course = etsuDB.courses;
+var Group=etsuDB.groups;
+// var Group = require('../models').Group;
 
 // Render all Group models in index with related models
 module.exports.Index = function(req, res) {
