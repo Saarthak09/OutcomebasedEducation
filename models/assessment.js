@@ -15,7 +15,7 @@
 const { DataTypes } = require("sequelize");
 
 const Assessment = (sequelize) => {
-  const assessments = sequelize.define("departments", {
+  const assessments = sequelize.define("assessments", {
     score: {
       type: DataTypes.DOUBLE,
     }});

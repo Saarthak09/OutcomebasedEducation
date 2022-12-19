@@ -1,6 +1,13 @@
 const Sequelize = require("sequelize");
 const User = require("./models/user");
-const Course=require("./models/course")
+const Course=require("./models/course");
+const Department = require("./models/department");
+const Student = require("./models/student");
+const ProgramOutcome = require("./models/programoutcome");
+const Assessment = require("./models/assessment");
+const Tool = require("./models/tool");
+const Chart = require("./models/chart");
+const Group=require("./models/group")
 // const host = process.env.MYSQL_DB_HOST;
 // const dbName = process.env.MYSQL_DB_NAME;
 // const user = process.env.MYSQL_DB_USER;
@@ -37,10 +44,17 @@ sequelize
 
 const etsuDB = {};
 
-etsuDB.sequelize = sequelize;
 etsuDB.Sequelize = Sequelize;
+etsuDB.sequelize=sequelize
 etsuDB.users = User(sequelize);
 etsuDB.courses=Course(sequelize);
+etsuDB.groups=Group(sequelize);
+etsuDB.departments=Department(sequelize);
+etsuDB.students=Student(sequelize);
+etsuDB.programoutcomes=ProgramOutcome(sequelize);
+etsuDB.assesments=Assessment(sequelize);
+etsuDB.tools=Tool(sequelize);
+etsuDB.charts=Chart(sequelize);
 
 etsuDB.sequelize
   .sync()

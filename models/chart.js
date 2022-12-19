@@ -16,7 +16,7 @@
 const { DataTypes } = require("sequelize");
 
 const Chart = (sequelize) => {
-  const charts = sequelize.define("departments", {
+  const charts = sequelize.define("charts", {
     score: {
       type: DataTypes.DOUBLE,
     }});

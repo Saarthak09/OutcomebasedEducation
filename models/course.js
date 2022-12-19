@@ -34,7 +34,7 @@ const Course = (sequelize) => {
     courses.hasMany(models.Group);
     courses.hasMany(models.Chart);
     };
-  return courses;
+  return courses; 
 };
 
 module.exports = Course;
